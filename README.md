@@ -28,10 +28,10 @@ $testObject = $testInjector->create(My\Test\Object::class, [
 Invocation usage
 ````
 // Call the method 'createUser' on an existing object
-$testObject = $testInjector->invoke($instanceOfThing, "createUser");
+$result = $testInjector->invoke($instanceOfThing, "createUser");
 
 // Parameter injection - will provide parameters either by type, name or position - otherwise resolve via mocking
-$testObject = $testInjector->invoke($instanceOfThing, "createUser", [
+$result = $testInjector->invoke($instanceOfThing, "createUser", [
     "enabled" => true,              // Named
     7 => "fish",                    // Positional
     Logger::class => new Logger(),  // Type
