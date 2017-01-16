@@ -55,7 +55,7 @@ class MockingContainer implements ContainerInterface
      */
     public function has($id)
     {
-        return (class_exists($id));
+        return (class_exists($id) || interface_exists($id));
     }
 
 
