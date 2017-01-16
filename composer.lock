@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c2dd7dfe68faf49ea076d6bd9d55e7b4",
-    "content-hash": "581986ee85ba50807a6d8267e59a77b1",
+    "hash": "b9adaac89553962f41767b636582d48a",
+    "content-hash": "91f6c49e6c734ae678cd1698d27eb185",
     "packages": [
         {
             "name": "bigcommerce/injector",
             "version": "2.0.1",
             "source": {
                 "type": "git",
-                "url": "ssh://git@github.com/bigcommerce-labs/pimple-injector.git",
+                "url": "ssh://git@github.com/bigcommerce-labs/injector.git",
                 "reference": "bca5bf9fa1e4770617cb411756e4336badfadd56"
             },
             "require": {

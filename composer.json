@@ -1,5 +1,5 @@
 {
-    "name": "bigcommerce/test-injector",
+    "name": "bigcommerce/mock-injector",
     "type": "library",
     "description": "Auto-mocking injector for testing DI components",
     "keywords": [
@@ -19,7 +19,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "ssh://git@github.com/bigcommerce-labs/pimple-injector.git"
+            "url": "ssh://git@github.com/bigcommerce-labs/injector.git"
         }
     ],
     "require": {
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bigcommerce\\TestInjector\\": "src/"
+            "Bigcommerce\\MockInjector\\": "src/"
         }
     },
     "autoload-dev": {

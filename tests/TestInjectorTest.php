@@ -2,15 +2,15 @@
 namespace Tests;
 
 use Bigcommerce\Injector\InjectorInterface;
-use Bigcommerce\TestInjector\MockingContainer;
-use Bigcommerce\TestInjector\TestInjector;
+use Bigcommerce\MockInjector\MockingContainer;
+use Bigcommerce\MockInjector\MockInjector;
 use Prophecy\Prophecy\ObjectProphecy;
 use Tests\Dummy\DummyDependency;
 use Tests\Dummy\DummySubDependency;
 
 /**
  *
- * @coversDefaultClass \Bigcommerce\TestInjector\TestInjector
+ * @coversDefaultClass \Bigcommerce\MockInjector\TestInjector
  */
 class TestInjectorTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,7 +32,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $this->injector->create("abc123", [1 => "hello"])->willReturn("cat")->shouldBeCalledTimes(1);
-        $i = new TestInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
         $this->assertEquals("cat", $i->create("abc123", [1 => "hello"]));
     }
 
@@ -43,7 +43,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
     {
         $obj = new \stdClass();
         $this->injector->invoke($obj, "method1", [1 => "hello"])->willReturn("fish")->shouldBeCalledTimes(1);
-        $i = new TestInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
         $this->assertEquals("fish", $i->invoke($obj, "method1", [1 => "hello"]));
     }
 
@@ -53,7 +53,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
     public function testCheckPredictions()
     {
         $this->mockContainer->checkPredictions()->shouldBeCalledTimes(1);
-        $i = new TestInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
         $i->checkPredictions();
     }
 
@@ -63,7 +63,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
     public function testGetAllMocks()
     {
         $this->mockContainer->getAllMocks()->willReturn([1, 2, 6])->shouldBeCalledTimes(1);
-        $i = new TestInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
         $this->assertEquals([1, 2, 6], $i->getAllMocks());
     }
 
@@ -74,7 +74,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
     {
         $dummy = new \stdClass();
         $this->mockContainer->getMock("blah")->willReturn($dummy)->shouldBeCalledTimes(1);
-        $i = new TestInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
         $this->assertEquals($dummy, $i->getMock("blah"));
     }
 
@@ -85,7 +85,7 @@ class TestInjectorTest extends \PHPUnit_Framework_TestCase
      */
     public function testWithoutDependencies()
     {
-        $i = new TestInjector();
+        $i = new MockInjector();
         /** @var DummyDependency $obj */
         $obj = $i->create(DummyDependency::class);
         $this->assertInstanceOf(DummySubDependency::class, $obj->getDependency());

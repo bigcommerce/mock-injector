@@ -1,5 +1,5 @@
 <?php
-namespace Bigcommerce\TestInjector;
+namespace Bigcommerce\MockInjector;
 
 
 use Interop\Container\ContainerInterface;

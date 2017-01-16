@@ -1,5 +1,5 @@
 <?php
-namespace Bigcommerce\TestInjector;
+namespace Bigcommerce\MockInjector;
 
 use Bigcommerce\Injector\InjectorInterface;
 
@@ -11,7 +11,7 @@ use Bigcommerce\Injector\InjectorInterface;
  */
 abstract class AutoMockingTest extends \PHPUnit_Framework_TestCase
 {
-    /** @var InjectorInterface|TestInjector */
+    /** @var InjectorInterface|MockInjector */
     protected $injector;
 
     /**
@@ -21,7 +21,7 @@ abstract class AutoMockingTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->injector = new TestInjector();
+        $this->injector = new MockInjector();
     }
 
     /**
