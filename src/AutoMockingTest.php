@@ -25,6 +25,16 @@ abstract class AutoMockingTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Create an instance of $className and automatically mock all its constructor dependencies.
+     * @param string $className The FQCN of the class we are creating
+     * @param array $parameters Any parameters to pass to the constructor. Can be keyed by type, name or position.
+     * @return object
+     */
+    protected function autoMock($className, $parameters = []){
+        return $this->injector->create($className, $parameters);
+    }
+
+    /**
      * Tears down the fixture, for example, close a network connection.
      * This method is called after a test is executed.
      */
