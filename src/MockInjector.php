@@ -60,12 +60,23 @@ class MockInjector implements InjectorInterface
 
 
     /**
+     * @param string $mockClassName FQCN of the dependency we mocked
+     * @return ObjectProphecy
+     * @deprecated
+     * @see MockInjector::getProphecy()
+     */
+    public function getMock($mockClassName)
+    {
+        return $this->getProphecy($mockClassName);
+    }
+
+    /**
      * Fetch one of the mocks that was auto-created by the MockContainer to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
      * @param string $mockClassName FQCN of the dependency we mocked
      * @return ObjectProphecy
      */
-    public function getMock($mockClassName)
+    public function getProphecy($mockClassName)
     {
         return $this->mockingContainer->getMock($mockClassName);
     }
