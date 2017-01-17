@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9adaac89553962f41767b636582d48a",
-    "content-hash": "91f6c49e6c734ae678cd1698d27eb185",
+    "hash": "c0f62dda5d167a72e4496a0684d64b09",
+    "content-hash": "9ba5910da022161f2ae44d1da338c298",
     "packages": [
         {
             "name": "bigcommerce/injector",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "ssh://git@github.com/bigcommerce-labs/injector.git",
-                "reference": "bca5bf9fa1e4770617cb411756e4336badfadd56"
+                "reference": "45d33cbfd140e99d5a8c1561342411aed3e3c65d"
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
                 "ocramius/proxy-manager": "^2.0",
-                "php": "^7.0",
+                "php": ">=5.6",
                 "pimple/pimple": "*"
             },
             "require-dev": {
@@ -50,7 +50,7 @@
                 "injector",
                 "pimple"
             ],
-            "time": "2017-01-14 12:04:30"
+            "time": "2017-01-17 22:12:44"
         },
         {
             "name": "container-interop/container-interop",
@@ -503,12 +503,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
+                "reference": "aed9e4fd4d98de0ba18c227536d57b456bf09cfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/aed9e4fd4d98de0ba18c227536d57b456bf09cfa",
+                "reference": "aed9e4fd4d98de0ba18c227536d57b456bf09cfa",
                 "shasum": ""
             },
             "require": {
@@ -558,7 +558,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-20 15:22:42"
+            "time": "2017-01-16 15:51:17"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -747,12 +747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "511c9a135ecd61b1719c92e239532f294c99e15a"
+                "reference": "6a251e7311b2936377388485a82bbc324baf9835"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/511c9a135ecd61b1719c92e239532f294c99e15a",
-                "reference": "511c9a135ecd61b1719c92e239532f294c99e15a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6a251e7311b2936377388485a82bbc324baf9835",
+                "reference": "6a251e7311b2936377388485a82bbc324baf9835",
                 "shasum": ""
             },
             "require": {
@@ -821,7 +821,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-02 15:53:34"
+            "time": "2017-01-17 18:27:01"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1663,7 +1663,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.0"
+        "php": ">=5.6"
     },
     "platform-dev": []
 }
