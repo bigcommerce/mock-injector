@@ -77,7 +77,7 @@ class ProphecyMockingContainer implements MockingContainerInterface
     /**
      * Fetch all of the mocks that was auto-created by the MockInjector to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
-     * @return \Prophecy\Prophecy\ObjectProphecy[]
+     * @return ObjectProphecy[]
      */
     public function getAllMocks()
     {
