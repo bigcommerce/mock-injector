@@ -1,10 +1,10 @@
 <?php
 namespace Bigcommerce\MockInjector;
 
-use Bigcommerce\Injector\Cache\ArrayServiceCache;
 use Bigcommerce\Injector\Injector;
 use Bigcommerce\Injector\InjectorInterface;
 use Bigcommerce\Injector\Reflection\ParameterInspector;
+use PHPUnit_Framework_MockObject_MockBuilder;
 use Prophecy\Exception\Prediction\AggregateException;
 use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophet;
@@ -22,7 +22,7 @@ class MockInjector implements InjectorInterface
      */
     private $injector;
     /**
-     * @var MockingContainer
+     * @var MockingContainerInterface
      */
     private $mockingContainer;
 
@@ -31,18 +31,18 @@ class MockInjector implements InjectorInterface
      * NOTE: The MockInjector intentionally does not use DependencyInjection and instantiates its own
      * dependencies via poor mans DI as it is used only for testing purposes and is tightly coupled to
      * its dependencies.
-     * @param MockingContainer $mockingContainer
+     * @param MockingContainerInterface $mockingContainer
      * @param InjectorInterface $injector
      */
     public function __construct(
-        MockingContainer $mockingContainer = null,
+        MockingContainerInterface $mockingContainer = null,
         InjectorInterface $injector = null
     ) {
-        $this->mockingContainer = $mockingContainer ?? new MockingContainer(new Prophet());
+        $this->mockingContainer = $mockingContainer ?? new ProphecyMockingContainer(new Prophet());
         if (!$injector) {
             $injector = new Injector(
                 $this->mockingContainer,
-                new ParameterInspector(new ArrayServiceCache())
+                new ParameterInspector(new StaticArrayServiceCache())
             );
         }
         $this->injector = $injector;
@@ -61,8 +61,7 @@ class MockInjector implements InjectorInterface
 
     /**
      * @param string $mockClassName FQCN of the dependency we mocked
-     * @return ObjectProphecy
-     * @deprecated
+     * @return ObjectProphecy|PHPUnit_Framework_MockObject_MockBuilder
      * @see MockInjector::getProphecy()
      */
     public function getMock($mockClassName)
@@ -74,7 +73,7 @@ class MockInjector implements InjectorInterface
      * Fetch one of the mocks that was auto-created by the MockContainer to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
      * @param string $mockClassName FQCN of the dependency we mocked
-     * @return ObjectProphecy
+     * @return ObjectProphecy|PHPUnit_Framework_MockObject_MockBuilder
      */
     public function getProphecy($mockClassName)
     {
@@ -84,7 +83,7 @@ class MockInjector implements InjectorInterface
     /**
      * Fetch all of the mocks that was auto-created by the MockContainer to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
-     * @return \Prophecy\Prophecy\ObjectProphecy[]
+     * @return ObjectProphecy[]|PHPUnit_Framework_MockObject_MockBuilder[]
      */
     public function getAllMocks()
     {

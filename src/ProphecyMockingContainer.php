@@ -1,13 +1,11 @@
 <?php
 namespace Bigcommerce\MockInjector;
 
-
-use Interop\Container\ContainerInterface;
 use Prophecy\Exception\Prediction\AggregateException;
 use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophet;
 
-class MockingContainer implements ContainerInterface
+class ProphecyMockingContainer implements MockingContainerInterface
 {
     /**
      * @var Prophet
@@ -58,18 +56,18 @@ class MockingContainer implements ContainerInterface
         return (class_exists($id) || interface_exists($id));
     }
 
-
     /**
-     * Fetch one of the mocks that was auto-created by the TestInjector to construct objects used in the current test,
+     * Fetch one of the mocks that was auto-created by the MockInjector to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
      * @param string $mockClassName FQCN of the dependency we mocked
      * @return ObjectProphecy
+     * @throws \InvalidArgumentException
      */
     public function getMock($mockClassName)
     {
         if (!isset($this->mocks[$mockClassName])) {
             throw new \InvalidArgumentException(
-                "The TestInject did not create a '$mockClassName' mock so it can not be retrieved."
+                "The MockInjector did not create a '$mockClassName' mock so it can not be retrieved."
             );
         }
 
@@ -77,7 +75,7 @@ class MockingContainer implements ContainerInterface
     }
 
     /**
-     * Fetch all of the mocks that was auto-created by the TestInjector to construct objects used in the current test,
+     * Fetch all of the mocks that was auto-created by the MockInjector to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
      * @return \Prophecy\Prophecy\ObjectProphecy[]
      */
