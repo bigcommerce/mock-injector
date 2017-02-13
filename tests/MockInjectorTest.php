@@ -4,15 +4,15 @@ namespace Tests;
 use Bigcommerce\Injector\InjectorInterface;
 use Bigcommerce\MockInjector\ProphecyMockingContainer;
 use Bigcommerce\MockInjector\MockInjector;
+use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use Tests\Dummy\DummyDependency;
 use Tests\Dummy\DummySubDependency;
 
 /**
- *
  * @coversDefaultClass \Bigcommerce\MockInjector\MockInjector
  */
-class MockInjectorTest extends \PHPUnit_Framework_TestCase
+class MockInjectorTest extends TestCase
 {
     /** @var  ObjectProphecy|ProphecyMockingContainer */
     private $mockContainer;
