@@ -6,7 +6,7 @@
          bootstrap="vendor/autoload.php"
 >
     <testsuites>
-        <testsuite name="Injector Test Suite">
+        <testsuite name="MockInjector Test Suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
