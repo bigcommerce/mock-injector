@@ -1,4 +1,8 @@
 # bigcommerce/mock-injector 
+[![Build Status](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/badges/build.png?b=master&s=6b0bd1c0db716ba85e2c12a64d640ab1a4d85369)](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/badges/quality-score.png?b=master&s=c0811fd76bcb31f9e73a0beb8114e5de34d9f0ca)](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/badges/coverage.png?b=master&s=a592e4140397a936727ce28d598ca19078aa0a64)](https://scrutinizer-ci.com/g/bigcommerce-labs/mock-injector/?branch=master)
+
 
 Auto-mocking test Dependency Injector component
 
