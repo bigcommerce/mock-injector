@@ -26,4 +26,12 @@ interface MockingContainerInterface extends ContainerInterface
      * @return ObjectProphecy[]
      */
     public function getAllMocks();
+
+    /**
+     * Set a prophecy to be used by the injector rather than creating on demand.
+     * @param string $mockClassName
+     * @param ObjectProphecy $mock
+     * @return void
+     */
+    public function setMock(string $mockClassName, ObjectProphecy $mock);
 }
