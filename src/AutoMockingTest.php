@@ -2,6 +2,7 @@
 namespace Bigcommerce\MockInjector;
 
 use Bigcommerce\Injector\InjectorInterface;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Configured PHPUnit TestCase providing auto-mocking of dependency injection components using the
@@ -9,7 +10,7 @@ use Bigcommerce\Injector\InjectorInterface;
  * Either extend it, or copy its setUp/tearDown methods to your own test cases. "MockInjector" is self contained.
  * @package Bigcommerce\MockInjector
  */
-abstract class AutoMockingTest extends \PHPUnit_Framework_TestCase
+abstract class AutoMockingTest extends TestCase
 {
     /** @var InjectorInterface|MockInjector */
     protected $injector;
