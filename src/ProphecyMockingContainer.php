@@ -1,4 +1,5 @@
 <?php
+
 namespace Bigcommerce\MockInjector;
 
 use Prophecy\Exception\Prediction\AggregateException;
@@ -11,6 +12,7 @@ class ProphecyMockingContainer implements MockingContainerInterface
      * @var Prophet
      */
     private $prophet;
+
     /**
      * Collection of mocks we've auto-created keyed by their FQCN
      * @var ObjectProphecy[]
@@ -43,7 +45,7 @@ class ProphecyMockingContainer implements MockingContainerInterface
      */
     public function get($id)
     {
-       return $this->createOrGetMock($id)->reveal();
+        return $this->createOrGetMock($id)->reveal();
     }
 
     /**
@@ -59,19 +61,25 @@ class ProphecyMockingContainer implements MockingContainerInterface
     /**
      * Fetch one of the mocks that was auto-created by the MockInjector to construct objects used in the current test,
      * so that you can set expectations or configure mock methods.
+     * Alternatively, will create and return a mock which the injector will use (useful for setting expectations
+     * on constructor behaviours prior to calling injector create)
      * @param string $mockClassName FQCN of the dependency we mocked
      * @return ObjectProphecy
-     * @throws \InvalidArgumentException
      */
     public function getMock($mockClassName)
     {
-        if (!isset($this->mocks[$mockClassName])) {
-            throw new \InvalidArgumentException(
-                "The MockInjector did not create a '$mockClassName' mock so it can not be retrieved."
-            );
-        }
+        return $this->createOrGetMock($mockClassName);
+    }
 
-        return $this->mocks[$mockClassName];
+    /**
+     * Set a prophecy to be used by the injector rather than creating on demand.
+     * @param string $mockClassName
+     * @param ObjectProphecy $mock
+     * @return void
+     */
+    public function setMock(string $mockClassName, ObjectProphecy $mock)
+    {
+        $this->mocks[$mockClassName] = $mock;
     }
 
     /**
