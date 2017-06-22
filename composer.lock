@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e64350bc3c0e6d67ae07db87d6d1f63f",
+    "content-hash": "14ec28d0950bdbbd36256b870e7686d9",
     "packages": [
         {
             "name": "bigcommerce/injector",
@@ -545,12 +545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff"
+                "reference": "79db5dd907ee977039f77ac8471a739497463429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/abe41cb27f4e4207c6f54a09272969fe55e0bbff",
-                "reference": "abe41cb27f4e4207c6f54a09272969fe55e0bbff",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/79db5dd907ee977039f77ac8471a739497463429",
+                "reference": "79db5dd907ee977039f77ac8471a739497463429",
                 "shasum": ""
             },
             "require": {
@@ -600,7 +600,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-03-03 17:09:02"
+            "time": "2017-05-31 16:22:32"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -858,12 +858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "42cca1bf58f3eecd10c171f71b7b65fabc5cc7eb"
+                "reference": "482eef438e6aa5eff4cf0485b43b35acea353cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/42cca1bf58f3eecd10c171f71b7b65fabc5cc7eb",
-                "reference": "42cca1bf58f3eecd10c171f71b7b65fabc5cc7eb",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/482eef438e6aa5eff4cf0485b43b35acea353cd7",
+                "reference": "482eef438e6aa5eff4cf0485b43b35acea353cd7",
                 "shasum": ""
             },
             "require": {
@@ -883,7 +883,7 @@
                 "phpunit/php-timer": "^1.0.6",
                 "phpunit/phpunit-mock-objects": "^4.0",
                 "sebastian/comparator": "^2.0",
-                "sebastian/diff": "^1.2",
+                "sebastian/diff": "^1.4.3 || ^2.0",
                 "sebastian/environment": "^3.0.2",
                 "sebastian/exporter": "^3.1",
                 "sebastian/global-state": "^1.1 || ^2.0",
@@ -908,7 +908,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.1.x-dev"
+                    "dev-master": "6.3.x-dev"
                 }
             },
             "autoload": {
@@ -934,7 +934,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-03 12:30:07"
+            "time": "2017-06-04 05:24:38"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1144,17 +1144,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "8d783f84d4d5adb5e6668589c227f95172373b6a"
+                "reference": "be09eeb0229d6ad4a1e80d2a8473dbe14b0db914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/8d783f84d4d5adb5e6668589c227f95172373b6a",
-                "reference": "8d783f84d4d5adb5e6668589c227f95172373b6a",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/be09eeb0229d6ad4a1e80d2a8473dbe14b0db914",
+                "reference": "be09eeb0229d6ad4a1e80d2a8473dbe14b0db914",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "sebastian/diff": "^1.2",
+                "sebastian/diff": "^1.2 || ^2.0",
                 "sebastian/exporter": "^3.0"
             },
             "require-dev": {
@@ -1200,7 +1200,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-03-07 07:07:51"
+            "time": "2017-05-19 04:08:27"
         },
         {
             "name": "sebastian/diff",
@@ -1260,12 +1260,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "11e7710b7724d42c62249b0e9d3030240398949d"
+                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/11e7710b7724d42c62249b0e9d3030240398949d",
-                "reference": "11e7710b7724d42c62249b0e9d3030240398949d",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
+                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
                 "shasum": ""
             },
             "require": {
@@ -1302,7 +1302,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-04-21 14:40:32"
+            "time": "2017-05-18 10:10:00"
         },
         {
             "name": "sebastian/exporter",
