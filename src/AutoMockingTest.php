@@ -30,19 +30,6 @@ abstract class AutoMockingTest extends TestCase
      * @param string $className The FQCN of the class we are creating
      * @param array $parameters Any parameters to pass to the constructor. Can be keyed by type, name or position.
      * @return object
-     * @deprecated
-     * @see createWithMocks()
-     */
-    protected function autoMock($className, $parameters = [])
-    {
-        return $this->injector->create($className, $parameters);
-    }
-
-    /**
-     * Create an instance of $className and automatically mock all its constructor dependencies.
-     * @param string $className The FQCN of the class we are creating
-     * @param array $parameters Any parameters to pass to the constructor. Can be keyed by type, name or position.
-     * @return object
      */
     protected function createWithMocks($className, $parameters = [])
     {
