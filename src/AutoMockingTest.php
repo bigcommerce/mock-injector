@@ -18,7 +18,7 @@ abstract class AutoMockingTest extends TestCase
     protected $injector;
 
     /** @var Prophet */
-    private $prophet;
+    private $mockingContainerProphet;
 
     /**
      * Sets up the fixture, for example, open a network connection.
@@ -27,8 +27,8 @@ abstract class AutoMockingTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->prophet = new Prophet();
-        $this->injector = new MockInjector(new ProphecyMockingContainer($this->prophet));
+        $this->mockingContainerProphet = new Prophet();
+        $this->injector = new MockInjector(new ProphecyMockingContainer($this->mockingContainerProphet));
     }
 
     /**
@@ -51,7 +51,7 @@ abstract class AutoMockingTest extends TestCase
         parent::tearDown();
         $this->injector->checkPredictions();
 
-        foreach ($this->prophet->getProphecies() as $objectProphecy) {
+        foreach ($this->mockingContainerProphet->getProphecies() as $objectProphecy) {
             foreach ($objectProphecy->getMethodProphecies() as $methodProphecies) {
                 /** @var MethodProphecy[] $methodProphecies */
                 foreach ($methodProphecies as $methodProphecy) {
