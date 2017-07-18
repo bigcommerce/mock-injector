@@ -3,6 +3,8 @@ namespace Bigcommerce\MockInjector;
 
 use Bigcommerce\Injector\InjectorInterface;
 use PHPUnit\Framework\TestCase;
+use Prophecy\Prophecy\MethodProphecy;
+use Prophecy\Prophet;
 
 /**
  * Configured PHPUnit TestCase providing auto-mocking of dependency injection components using the
@@ -15,6 +17,9 @@ abstract class AutoMockingTest extends TestCase
     /** @var InjectorInterface|MockInjector */
     protected $injector;
 
+    /** @var Prophet */
+    private $prophet;
+
     /**
      * Sets up the fixture, for example, open a network connection.
      * This method is called before a test is executed.
@@ -22,7 +27,8 @@ abstract class AutoMockingTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->injector = new MockInjector();
+        $this->prophet = new Prophet();
+        $this->injector = new MockInjector(new ProphecyMockingContainer($this->prophet));
     }
 
     /**
@@ -44,5 +50,14 @@ abstract class AutoMockingTest extends TestCase
     {
         parent::tearDown();
         $this->injector->checkPredictions();
+
+        foreach ($this->prophet->getProphecies() as $objectProphecy) {
+            foreach ($objectProphecy->getMethodProphecies() as $methodProphecies) {
+                /** @var MethodProphecy[] $methodProphecies */
+                foreach ($methodProphecies as $methodProphecy) {
+                    $this->addToAssertionCount(count($methodProphecy->getCheckedPredictions()));
+                }
+            }
+        }
     }
 }
