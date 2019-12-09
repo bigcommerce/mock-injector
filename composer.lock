@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f426439ae8f3e6b0345dc2d49736759e",
+    "content-hash": "2931152321eb2c529aad30b9d3bd86e2",
     "packages": [
         {
             "name": "bigcommerce/injector",
@@ -13,6 +13,12 @@
                 "type": "git",
                 "url": "https://github.com/bigcommerce-labs/injector.git",
                 "reference": "8c6673265860478031c24faedb5ba0a5df5b2ee5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bigcommerce-labs/injector/zipball/8c6673265860478031c24faedb5ba0a5df5b2ee5",
+                "reference": "8c6673265860478031c24faedb5ba0a5df5b2ee5",
+                "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
@@ -80,6 +86,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -1002,6 +1009,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
         },
         {
