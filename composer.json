@@ -17,7 +17,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.0",
+        "php": "^7.3",
         "bigcommerce/injector": "@stable",
         "phpunit/phpunit": "^6.0 || ^7.0"
     },
@@ -29,11 +29,6 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "platform": {
-            "php": "7.0.30"
         }
     }
 }
