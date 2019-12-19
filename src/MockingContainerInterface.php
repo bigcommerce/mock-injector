@@ -2,8 +2,8 @@
 declare(strict_types = 1);
 namespace Bigcommerce\MockInjector;
 
-use Interop\Container\ContainerInterface;
 use Prophecy\Prophecy\ObjectProphecy;
+use Psr\Container\ContainerInterface;
 
 interface MockingContainerInterface extends ContainerInterface
 {

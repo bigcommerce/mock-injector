@@ -4,30 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccff95f078cddc0cb02872cba3aee2e7",
+    "content-hash": "faa5d4f087b4d32a05a3690d0d15b609",
     "packages": [
         {
             "name": "bigcommerce/injector",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bigcommerce-labs/injector.git",
-                "reference": "8c6673265860478031c24faedb5ba0a5df5b2ee5"
+                "reference": "b59c75e70b142852e0535d678664712bccceff5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bigcommerce-labs/injector/zipball/8c6673265860478031c24faedb5ba0a5df5b2ee5",
-                "reference": "8c6673265860478031c24faedb5ba0a5df5b2ee5",
+                "url": "https://api.github.com/repos/bigcommerce-labs/injector/zipball/b59c75e70b142852e0535d678664712bccceff5f",
+                "reference": "b59c75e70b142852e0535d678664712bccceff5f",
                 "shasum": ""
             },
             "require": {
-                "container-interop/container-interop": "^1.1",
                 "ocramius/proxy-manager": "^1.0 || ^2.0",
-                "php": ">=5.6",
-                "pimple/pimple": "*"
+                "php": "^7.3",
+                "pimple/pimple": "*",
+                "psr/container": "^1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.0 || ^5.6"
+                "phpunit/phpunit": "^5.6 || ^6.0 || ^7.0 || ^8.0"
             },
             "type": "library",
             "autoload": {
@@ -35,11 +35,7 @@
                     "Bigcommerce\\Injector\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -55,39 +51,7 @@
                 "injector",
                 "pimple"
             ],
-            "time": "2018-08-09T23:30:45+00:00"
-        },
-        {
-            "name": "container-interop/container-interop",
-            "version": "1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/container-interop/container-interop.git",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
-                "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
-                "shasum": ""
-            },
-            "require": {
-                "psr/container": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Interop\\Container\\": "src/Interop/Container/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "homepage": "https://github.com/container-interop/container-interop",
-            "abandoned": "psr/container",
-            "time": "2017-02-14T19:40:03+00:00"
+            "time": "2019-12-19T22:18:58+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -1944,9 +1908,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "bigcommerce/injector": 0
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

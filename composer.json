@@ -18,7 +18,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.3",
-        "bigcommerce/injector": "@stable",
+        "bigcommerce/injector": "^2.0.9",
         "phpunit/phpunit": "^6.0 || ^7.0 || ^8.0"
     },
     "autoload": {
