@@ -2,8 +2,8 @@
 namespace Tests;
 
 use Bigcommerce\Injector\InjectorInterface;
-use Bigcommerce\MockInjector\ProphecyMockingContainer;
 use Bigcommerce\MockInjector\MockInjector;
+use Bigcommerce\MockInjector\ProphecyMockingContainer;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use Tests\Dummy\DummyDependency;
@@ -19,7 +19,7 @@ class MockInjectorTest extends TestCase
     /** @var  ObjectProphecy|InjectorInterface */
     private $injector;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->mockContainer = $this->prophesize(ProphecyMockingContainer::class);
