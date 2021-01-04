@@ -1,9 +1,0 @@
-language: php
-php:
-  - 7.3
-
-install:
- - composer install
-
-script:
- - vendor/bin/phpunit --exclude-group=dummy

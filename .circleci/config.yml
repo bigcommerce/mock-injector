@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  ci: bigcommerce/internal@volatile
+  php: bigcommerce/internal-php@volatile
+
+jobs:
+  tests-unit:
+    parameters:
+      php-version:
+        type: string
+        default: 7.3-fpm
+    executor:
+      name: php/php
+      php-version: << parameters.php-version >>
+    steps:
+      - ci/pre-setup
+      - php/composer-install
+      - php/unit-phpunit:
+          configuration: 'phpunit.xml'
+
+workflows:
+  version: 2
+  full:
+    jobs:
+      - tests-unit:
+          matrix:
+            parameters:
+              php-version: [ "7.3-fpm", "7.4-fpm" ]
