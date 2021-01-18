@@ -3,11 +3,14 @@
 namespace Bigcommerce\MockInjector;
 
 use Prophecy\Exception\Prediction\AggregateException;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Prophecy\Prophet;
 
 class ProphecyMockingContainer implements MockingContainerInterface
 {
+    use ProphecyTrait;
+
     /**
      * @var Prophet
      */

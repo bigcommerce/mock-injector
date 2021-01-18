@@ -2,6 +2,7 @@
 namespace Tests;
 
 use Bigcommerce\Injector\InjectorInterface;
+use Bigcommerce\MockInjector\AutoMockingTest;
 use Bigcommerce\MockInjector\MockInjector;
 use Bigcommerce\MockInjector\ProphecyMockingContainer;
 use PHPUnit\Framework\TestCase;
@@ -12,18 +13,18 @@ use Tests\Dummy\DummySubDependency;
 /**
  * @coversDefaultClass \Bigcommerce\MockInjector\MockInjector
  */
-class MockInjectorTest extends TestCase
+class MockInjectorTest extends AutoMockingTest
 {
     /** @var  ObjectProphecy|ProphecyMockingContainer */
     private $mockContainer;
     /** @var  ObjectProphecy|InjectorInterface */
-    private $injector;
+    private $mockInjector;
 
     protected function setUp(): void
     {
         parent::setUp();
         $this->mockContainer = $this->prophesize(ProphecyMockingContainer::class);
-        $this->injector = $this->prophesize(InjectorInterface::class);
+        $this->mockInjector = $this->prophesize(InjectorInterface::class);
     }
 
     /**
@@ -31,8 +32,8 @@ class MockInjectorTest extends TestCase
      */
     public function testCreate()
     {
-        $this->injector->create("abc123", [1 => "hello"])->willReturn("cat")->shouldBeCalledTimes(1);
-        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $this->mockInjector->create("abc123", [1 => "hello"])->willReturn("cat")->shouldBeCalledTimes(1);
+        $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $this->assertEquals("cat", $i->create("abc123", [1 => "hello"]));
     }
 
@@ -42,8 +43,8 @@ class MockInjectorTest extends TestCase
     public function testInvoke()
     {
         $obj = new \stdClass();
-        $this->injector->invoke($obj, "method1", [1 => "hello"])->willReturn("fish")->shouldBeCalledTimes(1);
-        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $this->mockInjector->invoke($obj, "method1", [1 => "hello"])->willReturn("fish")->shouldBeCalledTimes(1);
+        $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $this->assertEquals("fish", $i->invoke($obj, "method1", [1 => "hello"]));
     }
 
@@ -53,7 +54,7 @@ class MockInjectorTest extends TestCase
     public function testCheckPredictions()
     {
         $this->mockContainer->checkPredictions()->shouldBeCalledTimes(1);
-        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $i->checkPredictions();
     }
 
@@ -63,7 +64,7 @@ class MockInjectorTest extends TestCase
     public function testGetAllMocks()
     {
         $this->mockContainer->getAllMocks()->willReturn([1, 2, 6])->shouldBeCalledTimes(1);
-        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $this->assertEquals([1, 2, 6], $i->getAllMocks());
     }
 
@@ -74,7 +75,7 @@ class MockInjectorTest extends TestCase
     {
         $dummy = new \stdClass();
         $this->mockContainer->getMock("blah")->willReturn($dummy)->shouldBeCalledTimes(1);
-        $i = new MockInjector($this->mockContainer->reveal(), $this->injector->reveal());
+        $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $this->assertEquals($dummy, $i->getMock("blah"));
     }
 
