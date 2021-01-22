@@ -19,11 +19,11 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.3 || ^8.0",
-        "bigcommerce/injector": "^2.1"
+        "bigcommerce/injector": "^2.1",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpunit/phpunit": " ^9.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0",
-        "phpspec/prophecy-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
