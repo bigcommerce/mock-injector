@@ -8,7 +8,7 @@ By contributing to this codebase, you agree that your contributions will be lice
 
 ### Pull Requests
 
-* Fill in [the required template](https://github.com/bigcommerce-labs/mock-injector/pull/new/master)
+* Fill in [the required template](https://github.com/bigcommerce/mock-injector/pull/new/master)
 * End files with a newline.
 
 ## Styleguides

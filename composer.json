@@ -11,8 +11,12 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Adam Benson",
-            "email": "adam.benson@bigcommerce.com"
+            "name": "Garry Filakhtov",
+            "email": "garry.filakhtov@bigcommerce.com"
+        },
+        {
+            "name": "Dmytro Kuzmenko",
+            "email": "dmytro.kuzmenko@bigcommerce.com"
         }
     ],
     "minimum-stability": "dev",
