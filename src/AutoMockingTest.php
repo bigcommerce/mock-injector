@@ -1,7 +1,6 @@
 <?php
 namespace Bigcommerce\MockInjector;
 
-use Bigcommerce\Injector\InjectorInterface;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\MethodProphecy;
@@ -17,7 +16,7 @@ abstract class AutoMockingTest extends TestCase
 {
     use ProphecyTrait;
 
-    /** @var InjectorInterface|MockInjector */
+    /** @var MockInjector */
     protected $injector;
 
     /** @var Prophet */
