@@ -1,0 +1,96 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\AutoMockingTest\\:\\:createWithMocks\\(\\) has parameter \\$parameters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: ../src/AutoMockingTest.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:checkPredictions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:create\\(\\) has parameter \\$parameters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:getAllMocks\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:getMock\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:getProphecy\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockInjector\\:\\:invoke\\(\\) has parameter \\$parameters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: ../src/MockInjector.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockingContainerInterface\\:\\:checkPredictions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: ../src/MockingContainerInterface.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockingContainerInterface\\:\\:getAllMocks\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockingContainerInterface.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockingContainerInterface\\:\\:getMock\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockingContainerInterface.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\MockingContainerInterface\\:\\:setMock\\(\\) has parameter \\$mock with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy but does not specify its types\\: T$#"
+			count: 1
+			path: ../src/MockingContainerInterface.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:checkPredictions\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:createOrGetMock\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:getAllMocks\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:getMock\\(\\) return type with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Method Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:setMock\\(\\) has parameter \\$mock with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy but does not specify its types\\: T$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Property Bigcommerce\\\\MockInjector\\\\ProphecyMockingContainer\\:\\:\\$mocks with generic class Prophecy\\\\Prophecy\\\\ObjectProphecy does not specify its types\\: T$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Unable to resolve the template type T in call to method Prophecy\\\\Prophet\\:\\:prophesize\\(\\)$#"
+			count: 1
+			path: ../src/ProphecyMockingContainer.php
+
+		-
+			message: "#^Static property Bigcommerce\\\\MockInjector\\\\StaticArrayServiceCache\\:\\:\\$cache \\(Bigcommerce\\\\Injector\\\\Cache\\\\ArrayServiceCache\\) in isset\\(\\) is not nullable\\.$#"
+			count: 1
+			path: ../src/StaticArrayServiceCache.php
