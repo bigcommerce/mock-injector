@@ -4,27 +4,17 @@ orbs:
   ci: bigcommerce/internal@volatile
   php: bigcommerce/internal-php@volatile
 
-jobs:
-  tests-unit:
+default_matrix: &default_matrix
+  matrix:
     parameters:
-      php-version:
-        type: string
-        default: "8.0"
-    executor:
-      name: php/php
-      php-version: << parameters.php-version >>
-    steps:
-      - ci/pre-setup
-      - php/composer-install:
-          composer_version: '--2'
-      - php/unit-phpunit:
-          configuration: 'phpunit.xml'
+      php-version: [ "8.0", "8.1", "8.2" ]
 
 workflows:
   version: 2
   full:
     jobs:
-      - tests-unit:
-          matrix:
-            parameters:
-              php-version: [ "8.0" ]
+      - php/phpunit-tests:
+          <<: *default_matrix
+      - php/static-analysis:
+          <<: *default_matrix
+          generate_ide_helper: false
