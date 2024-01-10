@@ -1,13 +1,16 @@
 version: 2.1
 
 orbs:
-  ci: bigcommerce/internal@volatile
   php: bigcommerce/internal-php@volatile
 
 jobs_default: &jobs_default
   e:
     name: php/php
-    php-version: "8.1"
+    php-version: << matrix.php-version >>
+  matrix:
+    parameters:
+      php-version: [ "8.1", "8.2" ]
+
 
 workflows:
   version: 2
