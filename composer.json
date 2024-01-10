@@ -22,10 +22,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^8.1",
         "bigcommerce/injector": "^3.0",
         "phpspec/prophecy-phpunit": "^2.0",
-        "phpunit/phpunit": " ^9.0"
+        "phpunit/phpunit": " ^10.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.10"

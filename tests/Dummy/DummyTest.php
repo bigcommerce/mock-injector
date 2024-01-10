@@ -15,7 +15,7 @@ class DummyTest extends AutoMockingTest
      * This is a dummy test which is called by AutoMockInjectorTestTest. It has one expectation configured using
      * Prophecy (see `->shouldBeCalled()`), therefore there is 1 assertion and the test shouldn't be marked as Risky.
      */
-    public function testWithProphecyExpectations()
+    public function testWithProphecyExpectations() : void
     {
         /** @var DummyDependency $dummyDependency */
         $dummyDependency = $this->createWithMocks(DummyDependency::class);
@@ -30,7 +30,7 @@ class DummyTest extends AutoMockingTest
     /**
      * This is a dummy test which doesn't have any assertions, therefore is risky.
      */
-    public function testWithoutAssertions()
+    public function testWithoutAssertions() : void
     {
     }
 }
