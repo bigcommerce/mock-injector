@@ -30,7 +30,7 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * @covers ::create
      */
-    public function testCreate()
+    public function testCreate() : void
     {
         $this->mockInjector->create("abc123", [1 => "hello"])->willReturn("cat")->shouldBeCalledTimes(1);
         $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
@@ -40,7 +40,7 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * @covers ::invoke
      */
-    public function testInvoke()
+    public function testInvoke() : void
     {
         $obj = new \stdClass();
         $this->mockInjector->invoke($obj, "method1", [1 => "hello"])->willReturn("fish")->shouldBeCalledTimes(1);
@@ -51,7 +51,7 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * @covers ::checkPredictions
      */
-    public function testCheckPredictions()
+    public function testCheckPredictions() : void
     {
         $this->mockContainer->checkPredictions()->shouldBeCalledTimes(1);
         $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
@@ -61,7 +61,7 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * @covers ::getAllMocks
      */
-    public function testGetAllMocks()
+    public function testGetAllMocks() : void
     {
         $this->mockContainer->getAllMocks()->willReturn([1, 2, 6])->shouldBeCalledTimes(1);
         $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
@@ -71,7 +71,7 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * @covers ::getMock
      */
-    public function testGetMock()
+    public function testGetMock() : void
     {
         $dummy = new \stdClass();
         $this->mockContainer->getMock("blah")->willReturn($dummy)->shouldBeCalledTimes(1);
@@ -84,7 +84,7 @@ class MockInjectorTest extends AutoMockingTest
      * and will instantiate an object with an auto-mocked dependency.
      * @covers ::__construct
      */
-    public function testWithoutDependencies()
+    public function testWithoutDependencies() : void
     {
         $i = new MockInjector();
         /** @var DummyDependency $obj */

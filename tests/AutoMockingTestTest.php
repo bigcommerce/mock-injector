@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types = 1);
 
 namespace Tests;
@@ -8,21 +9,21 @@ use Tests\Dummy\DummyTest;
 
 class AutoMockingTestTest extends TestCase
 {
-    public function testTestShouldNotBeRiskyWhenItHasProphecyExpectations()
+    public function testTestShouldNotBeRiskyWhenItHasProphecyExpectations(): void
     {
         $riskyTest = new DummyTest('testWithProphecyExpectations');
 
         $riskyTest->runBare();
 
-        $this->assertSame(1, $riskyTest->getNumAssertions());
+        $this->assertSame(1, $riskyTest->numberOfAssertionsPerformed());
     }
 
-    public function testTestShouldBeRiskyWhenItHasNoAssertions()
+    public function testTestShouldBeRiskyWhenItHasNoAssertions(): void
     {
         $riskyTest = new DummyTest('testWithoutAssertions');
 
         $riskyTest->runBare();
 
-        $this->assertSame(0, $riskyTest->getNumAssertions());
+        $this->assertSame(0, $riskyTest->numberOfAssertionsPerformed());
     }
 }
