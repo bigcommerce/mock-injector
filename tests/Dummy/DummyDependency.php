@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Dummy;
 
 /**
@@ -6,39 +7,14 @@ namespace Tests\Dummy;
  */
 class DummyDependency
 {
-    /**
-     * @var bool
-     */
-    private $enabled;
 
-    /**
-     * @var DummySubDependency
-     */
-    private $dependency;
-
-    /**
-     * DummyDependency constructor.
-     * @param DummySubDependency $dependency
-     * @param bool $enabled
-     */
-    public function __construct(DummySubDependency $dependency, $enabled = true)
+    public function __construct(
+        private readonly DummySubDependency $dependency
+    )
     {
-        $this->enabled = $enabled;
-        $this->dependency = $dependency;
     }
 
-    /**
-     * @return boolean
-     */
-    public function isEnabled()
-    {
-        return $this->enabled;
-    }
-
-    /**
-     * @return DummySubDependency
-     */
-    public function getDependency()
+    public function getDependency(): DummySubDependency
     {
         return $this->dependency;
     }
