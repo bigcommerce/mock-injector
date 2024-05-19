@@ -10,9 +10,6 @@ use Prophecy\Prophecy\ObjectProphecy;
 use Tests\Dummy\DummyDependency;
 use Tests\Dummy\DummySubDependency;
 
-/**
- * @coversDefaultClass \Bigcommerce\MockInjector\MockInjector
- */
 class MockInjectorTest extends AutoMockingTest
 {
     /** @var  ObjectProphecy|ProphecyMockingContainer */
@@ -27,19 +24,13 @@ class MockInjectorTest extends AutoMockingTest
         $this->mockInjector = $this->prophesize(InjectorInterface::class);
     }
 
-    /**
-     * @covers ::create
-     */
+    
     public function testCreate() : void
     {
         $this->mockInjector->create("abc123", [1 => "hello"])->willReturn("cat")->shouldBeCalledTimes(1);
         $i = new MockInjector($this->mockContainer->reveal(), $this->mockInjector->reveal());
         $this->assertEquals("cat", $i->create("abc123", [1 => "hello"]));
     }
-
-    /**
-     * @covers ::invoke
-     */
     public function testInvoke() : void
     {
         $obj = new \stdClass();
@@ -48,9 +39,6 @@ class MockInjectorTest extends AutoMockingTest
         $this->assertEquals("fish", $i->invoke($obj, "method1", [1 => "hello"]));
     }
 
-    /**
-     * @covers ::checkPredictions
-     */
     public function testCheckPredictions() : void
     {
         $this->mockContainer->checkPredictions()->shouldBeCalledTimes(1);
@@ -58,9 +46,6 @@ class MockInjectorTest extends AutoMockingTest
         $i->checkPredictions();
     }
 
-    /**
-     * @covers ::getAllMocks
-     */
     public function testGetAllMocks() : void
     {
         $this->mockContainer->getAllMocks()->willReturn([1, 2, 6])->shouldBeCalledTimes(1);
@@ -68,9 +53,6 @@ class MockInjectorTest extends AutoMockingTest
         $this->assertEquals([1, 2, 6], $i->getAllMocks());
     }
 
-    /**
-     * @covers ::getMock
-     */
     public function testGetMock() : void
     {
         $dummy = new \stdClass();
@@ -82,7 +64,6 @@ class MockInjectorTest extends AutoMockingTest
     /**
      * This is a live integration test. We wont provide any dependencies (so use poor mans DI)
      * and will instantiate an object with an auto-mocked dependency.
-     * @covers ::__construct
      */
     public function testWithoutDependencies() : void
     {
