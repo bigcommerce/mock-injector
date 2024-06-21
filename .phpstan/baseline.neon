@@ -89,8 +89,3 @@ parameters:
 			message: "#^Unable to resolve the template type T in call to method Prophecy\\\\Prophet\\:\\:prophesize\\(\\)$#"
 			count: 1
 			path: ../src/ProphecyMockingContainer.php
-
-		-
-			message: "#^Static property Bigcommerce\\\\MockInjector\\\\StaticArrayServiceCache\\:\\:\\$cache \\(Bigcommerce\\\\Injector\\\\Cache\\\\ArrayServiceCache\\) in isset\\(\\) is not nullable\\.$#"
-			count: 1
-			path: ../src/StaticArrayServiceCache.php
