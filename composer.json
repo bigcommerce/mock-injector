@@ -23,7 +23,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.1",
-        "bigcommerce/injector": "^3.0",
+        "bigcommerce/injector": "^4.1",
         "phpspec/prophecy-phpunit": "^2.0",
         "phpunit/phpunit": " ^10.0"
     },
