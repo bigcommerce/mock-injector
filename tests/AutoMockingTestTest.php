@@ -15,7 +15,8 @@ class AutoMockingTestTest extends TestCase
 
         $riskyTest->runBare();
 
-        $this->assertSame(1, $riskyTest->numberOfAssertionsPerformed());
+        $this->assertFalse($riskyTest->isRisky());
+
     }
 
     public function testTestShouldBeRiskyWhenItHasNoAssertions(): void
@@ -24,6 +25,6 @@ class AutoMockingTestTest extends TestCase
 
         $riskyTest->runBare();
 
-        $this->assertSame(0, $riskyTest->numberOfAssertionsPerformed());
+        $this->assertTrue($riskyTest->isRisky());
     }
 }
