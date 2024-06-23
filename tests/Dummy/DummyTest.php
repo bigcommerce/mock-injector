@@ -3,7 +3,9 @@ declare(strict_types = 1);
 
 namespace Tests\Dummy;
 
+use BadMethodCallException;
 use Bigcommerce\MockInjector\AutoMockingTest;
+use Exception;
 use Prophecy\Prophecy\ObjectProphecy;
 
 /**
@@ -32,5 +34,18 @@ class DummyTest extends AutoMockingTest
      */
     public function testWithoutAssertions() : void
     {
+    }
+
+    public function isRisky(): bool
+    {
+        if (is_callable([$this, 'numberOfAssertionsPerformed'])) {
+            return $this->numberOfAssertionsPerformed() === 0;
+        }
+
+        if (is_callable([$this, 'getNumAssertions'])) {
+            return $this->getNumAssertions() === 0;
+        }
+
+        throw new BadMethodCallException("Could not check the number of assertions performed");
     }
 }
