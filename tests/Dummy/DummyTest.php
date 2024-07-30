@@ -7,10 +7,9 @@ use BadMethodCallException;
 use Bigcommerce\MockInjector\AutoMockingTest;
 use Exception;
 use Prophecy\Prophecy\ObjectProphecy;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group dummy
- */
+#[Group('dummy')]
 class DummyTest extends AutoMockingTest
 {
     /**
