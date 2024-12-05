@@ -33,8 +33,8 @@ class MockInjector implements InjectorInterface
      * @param InjectorInterface $injector
      */
     public function __construct(
-        MockingContainerInterface $mockingContainer = null,
-        InjectorInterface $injector = null
+        ?MockingContainerInterface $mockingContainer = null,
+        ?InjectorInterface $injector = null
     ) {
         $this->mockingContainer = $mockingContainer ?? new ProphecyMockingContainer(new Prophet());
         if (!$injector) {
