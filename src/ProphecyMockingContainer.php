@@ -43,7 +43,7 @@ class ProphecyMockingContainer implements MockingContainerInterface
      * @param string $id
      * @return mixed
      */
-    public function get(string $id)
+    public function get($id)
     {
         return $this->createOrGetMock($id)->reveal();
     }
@@ -53,7 +53,7 @@ class ProphecyMockingContainer implements MockingContainerInterface
      * @param string $id
      * @return bool
      */
-    public function has(string $id): bool
+    public function has($id): bool
     {
         return (class_exists($id) || interface_exists($id));
     }
